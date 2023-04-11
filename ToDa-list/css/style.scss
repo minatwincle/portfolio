@@ -1,0 +1,412 @@
+@mixin checkBoxReset {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  vertical-align: top;
+}
+$fontColor1:#fff;
+$fontColor2:#26e400;
+$fontColor3:#ff3191;
+$shadowColor1:#0f5c00;
+$shadowColor2:#791845;
+$checkedColor1:#7fe66a;
+$checkedColor2:#ff9ecb;
+
+
+body {
+  font-family: 'メイリオ';
+  min-height: 100vh;
+  background: #dde000;
+  overflow: hidden;
+}
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+header {
+  h1 {
+    color: $fontColor2;
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 30px;
+    &.checked {
+      color: $fontColor3;
+    }
+  }
+}
+main {
+  .form-area {
+    display: flex;
+    justify-content: center;
+    padding: 0 6px;
+    form {
+      position: relative;
+      max-width: 645px;
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: $fontColor2;
+      border: 2px solid $fontColor2;
+      border-radius: 8px;
+      box-shadow: $shadowColor1 3px 3px 6px;
+      &.checked {
+        background-color: $fontColor3;
+        border: 2px solid $fontColor3;
+        box-shadow: $shadowColor2 3px 3px 6px;
+      }
+      p {
+        input {
+          border: 1px solid $fontColor1;
+          padding: 5px;
+          font-size: 1.2rem;
+          &#important {
+            @include checkBoxReset;
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            &::before {
+              position: absolute;
+              content: '▲ ▼';
+              color: $fontColor2;
+              font-size: 3.7rem;
+              line-height: 3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $fontColor1;
+              border: 2px solid $fontColor2;
+              border-radius: 8px 0 0 8px;
+              width: 60px;
+              height: 100px;
+              transition: .25s ease-in-out;
+            }
+            &:checked::before {
+              color: $fontColor3;
+              border: 2px solid $fontColor3;
+            }
+            &::after {
+              position: absolute;
+              content: '';
+              width: 60px;
+              height: 52px;
+              background-color: $fontColor2;
+              border-radius: 8px 0 0 0;
+              transition: .25s ease-in-out;
+            }
+            &:checked::after {
+              translate: 0 48px;
+              background-color: $fontColor3;
+              border-radius: 0 0 0 8px;
+            }
+          }
+        }
+        textarea {
+          border: 1px solid $fontColor1;
+          padding: 5px;
+          font-size: 1.2rem;
+          max-width: 330px;
+          min-width: 120px;
+          width: 100%;
+          height: 96px;
+          translate: 0 1px;
+        }
+        &:has(textarea) {
+          padding-right: 44px;
+        }
+      }
+      .form-container {
+        padding-left: 55px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        p {
+          input {
+            max-width: 200px;
+            min-width: 90px;
+            width: 100%;
+            height: 46px;
+          }
+        }
+      }
+      input#button {
+        position: absolute;
+        right: 0;
+        width: 96px;
+        height: 44px;
+        border: none;
+        border-radius: 4px 4px 0 0;
+        color: $fontColor1;
+        background-color: $fontColor2;
+        rotate: 90deg;
+        translate: 26px;
+        font-size: 2rem;
+        font-weight: bold;
+        &.checked {
+          background-color: $fontColor3;
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 35px 6px;
+    .status-bar {
+      container-type: inline-size;
+      max-width: 450px;
+      width: 100%;
+      height: 60px;
+      padding: 4px;
+      border-radius: 30px;
+      box-shadow: $shadowColor1 3px 3px 6px;
+      display: flex;
+      position: relative;
+      background-color: $fontColor2;
+      &.common {
+        animation: fadeIn .6s cubic-bezier(.92,.35,.34,1.51) forwards;
+      }
+      &.clear {
+        animation: fadeOut .6s cubic-bezier(1,-0.77,.31,1) forwards;
+      }
+      &.none {
+        animation: vibration .3s ease-out forwards;
+      }
+      &.slide-up {
+        height: 60px;
+        animation: slideUp .5s ease-out forwards;
+        &.clear {
+          animation: fadeOut .6s cubic-bezier(1,-0.77,.31,1) forwards;
+        }
+      }
+      &.slide {
+        height: 135px;
+        animation: slideDown .5s ease-out forwards;
+        &.clear {
+          animation: fadeOut .6s cubic-bezier(1,-0.77,.31,1) forwards;
+        }
+      }
+      &.checked {
+        background-color: $checkedColor1
+      }
+      .checkbox {
+        @include checkBoxReset;
+        position: relative;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: $fontColor1;
+        &::before {
+          position: absolute;
+          content: '';
+          display: none;
+          width: 40px;
+          height: 20px;
+          background-color: $shadowColor1;
+          border-radius: 0 0 20px 0;
+          rotate: 53deg;
+          top: 5px;
+          left: 4px;
+          transform-origin: left;
+          scale: 0 1;
+        }
+        &:checked::before {
+          display: flex;
+          animation: checkSign .1s linear forwards;
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          display: none;
+          width: 75px;
+          height: 20px;
+          background-color: $shadowColor1;
+          border-radius: 0 0 0 20px;
+          rotate: -48deg;
+          top: 36px;
+          left: 20px;
+          transform-origin: left;
+          scale: 0 1;
+        }
+        &:checked::after {
+          display: flex;
+          animation: checkSign .1s .1s linear forwards;
+        }
+      }
+      .title {
+        position: absolute;
+        top: 22px;
+        left: 65px;
+        color: $fontColor1;
+        font-size: 1.2rem;
+      }
+      .limit {
+        position: absolute;
+        top: 22px;
+        right: 100px;
+        color: $fontColor1;
+        font-size: 1.2rem;
+      }
+      .discription-message {
+        position: absolute;
+        top: 22px;
+        right: 50px;
+        color: $fontColor1;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+          scale: 1.2;
+        }
+      }
+      .discription {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 70px;
+        width: 98%;
+        height: 60px;
+        translate: -50%;
+        padding: 5px 25px;
+        border-radius: 30px;
+        background-color: $fontColor1;
+        color: $fontColor2;
+        line-height: 1.2rem;
+        word-wrap: break-word;
+        overflow-y: auto;
+        &.fade-in {
+          display: block;
+          opacity: 0;
+          animation: slideFadeIn .3s .5s ease-out forwards;
+        }
+      }
+      .delete-key {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        cursor: pointer;
+        .delete-button {
+          color: $fontColor1;
+          font-size: 2rem;
+        }
+      }
+      &.important-list {
+        background-color: $fontColor3;
+        box-shadow: $shadowColor2 3px 3px 6px;
+        &.checked {
+          background-color: $checkedColor2;
+        }
+        .checkbox {
+          &::before {
+            background-color: $shadowColor2;
+          }
+          &::after {
+            background-color: $shadowColor2;
+          }
+        }
+        .discription {
+          color: $fontColor3;
+        }
+      }
+    }
+  }
+}
+@container (max-width:330px) {
+  main {
+    .container {
+      .status-bar {
+        .limit {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@keyframes fadeIn {
+  from {
+    translate: -1000px;
+    opacity: 0;
+  }
+  to {
+    translate: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    translate: 0;
+    opacity: 1;
+  }
+  to {
+    translate: 1000px;
+    opacity: 0;
+  }
+}
+@keyframes vibration {
+  from {
+    translate: 0;
+  }
+  17% {translate: -10px;}
+  34% {translate: 10px;}
+  51% {translate: -10px;}
+  67% {translate: 10px;}
+  84% {translate: -10px;}
+  to {
+    translate: 0;
+  }
+}
+@keyframes slideUp {
+  from {
+    height: 135px;
+  }
+  to {
+    height: 60px;
+  }
+}
+@keyframes slideDown {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 135px;
+  }
+}
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes checkSign {
+  to {
+    scale: 1 1;
+  }
+}
+
+footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    small {
+      font-size: .6rem;
+      color: $fontColor1;
+    }
+  }
+}
