@@ -63,8 +63,8 @@ main .form-area form p input#important {
   appearance: none;
   top: 0px;
   left: 0px;
-  cursor: pointer;
   vertical-align: top;
+  cursor: pointer;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -203,8 +203,8 @@ main .container .status-bar .checkbox {
   appearance: none;
   top: 0px;
   left: 0px;
-  cursor: pointer;
   vertical-align: top;
+  cursor: pointer;
   position: relative;
   width: 52px;
   height: 52px;
