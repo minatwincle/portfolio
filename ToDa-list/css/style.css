@@ -227,32 +227,31 @@ main .container .status-bar .checkbox::before {
 }
 main .container .status-bar .checkbox:checked::before {
   display: flex;
-  animation: checkSign 0.1s linear forwards;
+  animation: checkSign 0.15s linear forwards;
 }
 main .container .status-bar .checkbox::after {
   position: absolute;
   content: "";
   display: none;
-  width: 75px;
+  width: 55px;
   height: 20px;
   background-color: #0f5c00;
-  border-radius: 0 0 0 20px;
-  rotate: -48deg;
-  top: 36px;
-  left: 20px;
+  rotate: -46deg;
+  top: 25px;
+  left: 28px;
   transform-origin: left;
   scale: 0 1;
 }
 main .container .status-bar .checkbox:checked::after {
   display: flex;
-  animation: checkSign 0.1s 0.1s linear forwards;
+  animation: checkSign 0.15s 0.26s ease-in forwards;
 }
 main .container .status-bar .title {
   position: absolute;
-  top: 22px;
+  top: 18px;
   left: 65px;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 main .container .status-bar .limit {
   position: absolute;
