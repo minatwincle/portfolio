@@ -155,7 +155,7 @@ main .container {
 }
 main .container .status-bar {
   container-type: inline-size;
-  max-width: 450px;
+  max-width: 620px;
   width: 100%;
   height: 60px;
   padding: 4px;
