@@ -289,6 +289,11 @@ main .container .status-bar .discription {
   line-height: 1.2rem;
   word-wrap: break-word;
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+main .container .status-bar .discription::-webkit-scrollbar {
+  display: none;
 }
 main .container .status-bar .discription.fade-in {
   display: block;
