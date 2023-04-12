@@ -202,7 +202,8 @@ main {
         }
       }
       &.checked {
-        background-color: $checkedColor1
+        background-color: $checkedColor1;
+        box-shadow: inset $shadowColor1 3px 3px 6px;
       }
       .checkbox {
         @include checkBoxReset;
@@ -310,6 +311,7 @@ main {
         box-shadow: $shadowColor2 3px 3px 6px;
         &.checked {
           background-color: $checkedColor2;
+          box-shadow: inset $shadowColor2 3px 3px 6px;
         }
         .checkbox {
           &::before {

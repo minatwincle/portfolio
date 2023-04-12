@@ -190,6 +190,7 @@ main .container .status-bar.slide.clear {
 }
 main .container .status-bar.checked {
   background-color: #7fe66a;
+  box-shadow: inset #0f5c00 3px 3px 6px;
 }
 main .container .status-bar .checkbox {
   margin: 0;
@@ -310,6 +311,7 @@ main .container .status-bar.important-list {
 }
 main .container .status-bar.important-list.checked {
   background-color: #ff9ecb;
+  box-shadow: inset #791845 3px 3px 6px;
 }
 main .container .status-bar.important-list .checkbox::before {
   background-color: #791845;
