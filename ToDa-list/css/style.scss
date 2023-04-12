@@ -93,10 +93,6 @@ main {
               height: 100px;
               transition: .25s ease-in-out;
             }
-            &:checked::before {
-              color: $fontColor3;
-              border: 2px solid $fontColor3;
-            }
             &::after {
               position: absolute;
               content: '';
@@ -106,10 +102,16 @@ main {
               border-radius: 8px 0 0 0;
               transition: .25s ease-in-out;
             }
-            &:checked::after {
-              translate: 0 48px;
-              background-color: $fontColor3;
-              border-radius: 0 0 0 8px;
+            &:checked {
+              &::before {
+                color: $fontColor3;
+                border: 2px solid $fontColor3;
+              }
+              &::after {
+                translate: 0 48px;
+                background-color: $fontColor3;
+                border-radius: 0 0 0 8px;
+              }
             }
           }
         }
