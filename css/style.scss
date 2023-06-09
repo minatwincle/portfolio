@@ -1,0 +1,385 @@
+@mixin curtain {
+  display: block;
+  width: 100%;
+  height: calc(750px / 16);
+  background-color: #fff;
+  translate: 100% 0;
+  opacity: 1;
+  z-index: 1;
+}
+@mixin secStand {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@mixin secOn {
+  display: block;
+  opacity: 0;
+  animation: mainFade .4s forwards linear;
+}
+@mixin secTitle {
+  font-size: 2.5rem;
+  color: #414141;
+  text-align: center;
+  padding: 40px 0 0 0;
+}
+
+$fontColor: #414141;
+
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+.wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+// ヘッダー
+header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+// タイトル
+  .header__title {
+    padding: 10px 30px 10px 50px;
+    text-align: center;
+    &__main {
+      height: 45px;
+      font-size: 2rem;
+      line-height: 45px;
+      color:$fontColor;
+    }
+    &__sub {
+      font-size: 1.2rem;
+      color:$fontColor;
+    }
+  }
+// ナビゲーション
+  .header__nav {
+    padding: 30px 25px 0 0;
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      &__link {
+        &.on {
+          pointer-events: none;
+          a {
+            font-size: 1.6rem;
+          }
+        }
+        a {
+          width: 80px;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          text-decoration: none;
+          color: $fontColor;
+          font-size: 1.2rem;
+          font-weight: bold;
+          transition: .1s;
+          &:hover {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// メイン
+main {
+  .main__container {
+    max-width: 800px;
+    width: 100%;
+    max-height: 750px;
+    background: url(../img/main-container-bg.jpg);
+    border-right: 3px $fontColor solid;
+    border-bottom: 3px $fontColor solid;
+    box-sizing: content-box;
+    margin: 15px auto 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+// スライドカーテン
+    &__curtain {
+      display: flex;
+      flex-direction: column;
+      &__span {
+        &--1,&--2,&--3,&--4,&--5,&--6,&--7,&--8,&--9,&--10,&--11,&--12,&--13,&--14,&--15,&--16 {
+          @include curtain;
+        }
+      }
+      &.slide {
+        .main__container__curtain__span {
+          &--1 {
+            animation: curtainSlide .15s .1s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--2 {
+            animation: curtainSlide .3s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--3 {
+            animation: curtainSlide .23s .05s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--4 {
+            animation: curtainSlide .12s .08s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--5 {
+            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--6 {
+            animation: curtainSlide .1s .1s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--7 {
+            animation: curtainSlide .23s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--8 {
+            animation: curtainSlide .3s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--9 {
+            animation: curtainSlide .16s .14s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--10 {
+            animation: curtainSlide .2s .03s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--11 {
+            animation: curtainSlide .15s .12s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--12 {
+            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--13 {
+            animation: curtainSlide .25s .03s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--14 {
+            animation: curtainSlide .2s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--15 {
+            animation: curtainSlide .15s .08s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+          &--16 {
+            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+          }
+        }
+      }
+    }
+// 紹介
+    &__intro {
+      @include secStand;
+      &.on {
+        @include secOn;
+      }
+      &__box {
+        &__title {
+          @include secTitle;
+        }
+        &__contents {
+          margin-top: 60px;
+          font-weight: bold;
+          h3 {
+            text-align: center;
+            font-size: 1.8rem;
+          }
+          p {
+            text-align: center;
+            font-size: .8rem;
+            margin-top: 5px;
+          }
+          dl {
+            max-width: 600px;
+            width: 100%;
+            margin: 30px auto 0 auto;
+            dt {
+              font-size: 1.5rem;
+              padding-left: 10px;
+              &:nth-of-type(2) {
+                margin-top: 40px;
+              }
+            }
+            dd {
+              margin-top: 15px;
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+    }
+// 制作
+    &__work {
+      @include secStand;
+      &.on {
+        @include secOn;
+      }
+      &__box {
+        &__title {
+          @include secTitle;
+        }
+        &__contents {
+          margin: 60px 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          .work-file{
+            display: flex;
+            gap: 15px;
+            padding: 0 20px;
+            &-text {
+              height: 200px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              h3 {
+                font-size: 1.5rem;
+                color: $fontColor;
+              }
+              p {
+                margin-top: 15px;
+                font-size: 1.1rem;
+                color: $fontColor;
+              }
+            }
+          }
+        }
+      }
+    }
+// スキル
+    &__skill {
+      @include secStand;
+      &.on {
+        @include secOn;
+      }
+      &__box {
+        &__title {
+          @include secTitle;
+        }
+        .skill-file {
+          text-align: center;
+          &:nth-of-type(1) {
+            margin-top: 60px;
+          }
+          &:nth-of-type(2) {
+            margin-top: 45px;
+          }
+          h3 {
+            font-size: 1.5rem;
+            color: $fontColor;
+          }
+          ul {
+            margin-top: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            li {
+              font-size: 1.3rem;
+              color: $fontColor;
+              &+li::before {
+                content: ' /';
+                color: $fontColor;
+              }
+            }
+          }
+        }
+      }
+    }
+// リンク
+    &__link {
+      @include secStand;
+      &.on {
+        @include secOn;
+      }
+      &__box {
+        &__title {
+          @include secTitle;
+        }
+        .link-file {
+          text-align: center;
+          margin-top: 120px;
+          p {
+            a {
+              font-size: 1.3rem;
+              color: $fontColor;
+              text-decoration: none;
+              position: relative;
+              &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform-origin: center;
+                translate: -50%;
+                scale: 0;
+                width: 400px;
+                height: 80px;
+                border-radius: 50%;
+                background: radial-gradient(#fff 20%, transparent 60%);
+                opacity: .8;
+                pointer-events: none;
+              }
+              &:hover::before {
+                scale: 1;
+                transition: .6s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// フッター
+footer {
+  padding-top: 20px;
+  p {
+    text-align: center;
+    small {
+      font-size: .9rem;
+    }
+  }
+}
+
+
+// アニメーション
+@keyframes curtainSlide {
+  from {
+    translate: 100% 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes curtainFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes mainFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
