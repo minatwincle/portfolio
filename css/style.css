@@ -39,7 +39,7 @@ header .header__nav__list__link.on {
   pointer-events: none;
 }
 header .header__nav__list__link.on a {
-  font-size: 1.6rem;
+  color: #bbb;
 }
 header .header__nav__list__link a {
   width: 80px;
@@ -54,7 +54,7 @@ header .header__nav__list__link a {
   transition: 0.1s;
 }
 header .header__nav__list__link a:hover {
-  font-size: 1.6rem;
+  color: #bbb;
 }
 
 main .main__container {

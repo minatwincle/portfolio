@@ -16,7 +16,7 @@
 @mixin secOn {
   display: block;
   opacity: 0;
-  animation: mainFade .4s forwards linear;
+  animation: mainFade 0.4s forwards linear;
 }
 @mixin secTitle {
   font-size: 2.5rem;
@@ -27,12 +27,9 @@
 
 $fontColor: #414141;
 
-
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-
 
 .wrapper {
   max-width: 800px;
@@ -41,14 +38,12 @@ body {
   position: relative;
 }
 
-
-
 // ヘッダー
 header {
   display: flex;
   justify-content: space-between;
   position: relative;
-// タイトル
+  // タイトル
   .header__title {
     padding: 10px 30px 10px 50px;
     text-align: center;
@@ -56,14 +51,14 @@ header {
       height: 45px;
       font-size: 2rem;
       line-height: 45px;
-      color:$fontColor;
+      color: $fontColor;
     }
     &__sub {
       font-size: 1.2rem;
-      color:$fontColor;
+      color: $fontColor;
     }
   }
-// ナビゲーション
+  // ナビゲーション
   .header__nav {
     padding: 30px 25px 0 0;
     &__list {
@@ -73,7 +68,7 @@ header {
         &.on {
           pointer-events: none;
           a {
-            font-size: 1.6rem;
+            color: #bbb;
           }
         }
         a {
@@ -86,17 +81,15 @@ header {
           color: $fontColor;
           font-size: 1.2rem;
           font-weight: bold;
-          transition: .1s;
+          transition: 0.1s;
           &:hover {
-            font-size: 1.6rem;
+            color: #bbb;
           }
         }
       }
     }
   }
 }
-
-
 
 // メイン
 main {
@@ -117,69 +110,100 @@ main {
     &::-webkit-scrollbar {
       display: none;
     }
-// スライドカーテン
+    // スライドカーテン
     &__curtain {
       display: flex;
       flex-direction: column;
       &__span {
-        &--1,&--2,&--3,&--4,&--5,&--6,&--7,&--8,&--9,&--10,&--11,&--12,&--13,&--14,&--15,&--16 {
+        &--1,
+        &--2,
+        &--3,
+        &--4,
+        &--5,
+        &--6,
+        &--7,
+        &--8,
+        &--9,
+        &--10,
+        &--11,
+        &--12,
+        &--13,
+        &--14,
+        &--15,
+        &--16 {
           @include curtain;
         }
       }
       &.slide {
         .main__container__curtain__span {
           &--1 {
-            animation: curtainSlide .15s .1s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.15s 0.1s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--2 {
-            animation: curtainSlide .3s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.3s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--3 {
-            animation: curtainSlide .23s .05s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.23s 0.05s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--4 {
-            animation: curtainSlide .12s .08s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.12s 0.08s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--5 {
-            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.28s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--6 {
-            animation: curtainSlide .1s .1s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.1s 0.1s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--7 {
-            animation: curtainSlide .23s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.23s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--8 {
-            animation: curtainSlide .3s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.3s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--9 {
-            animation: curtainSlide .16s .14s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.16s 0.14s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--10 {
-            animation: curtainSlide .2s .03s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.2s 0.03s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--11 {
-            animation: curtainSlide .15s .12s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.15s 0.12s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--12 {
-            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.28s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--13 {
-            animation: curtainSlide .25s .03s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.25s 0.03s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--14 {
-            animation: curtainSlide .2s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.2s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--15 {
-            animation: curtainSlide .15s .08s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.15s 0.08s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
           &--16 {
-            animation: curtainSlide .28s linear forwards,curtainFade .3s .45s linear forwards;
+            animation: curtainSlide 0.28s linear forwards,
+              curtainFade 0.3s 0.45s linear forwards;
           }
         }
       }
     }
-// 紹介
+    // 紹介
     &__intro {
       @include secStand;
       &.on {
@@ -198,7 +222,7 @@ main {
           }
           p {
             text-align: center;
-            font-size: .8rem;
+            font-size: 0.8rem;
             margin-top: 5px;
           }
           dl {
@@ -220,7 +244,7 @@ main {
         }
       }
     }
-// 制作
+    // 制作
     &__work {
       @include secStand;
       &.on {
@@ -235,7 +259,7 @@ main {
           display: flex;
           flex-direction: column;
           gap: 25px;
-          .work-file{
+          .work-file {
             display: flex;
             gap: 15px;
             padding: 0 20px;
@@ -258,7 +282,7 @@ main {
         }
       }
     }
-// スキル
+    // スキル
     &__skill {
       @include secStand;
       &.on {
@@ -288,7 +312,7 @@ main {
             li {
               font-size: 1.3rem;
               color: $fontColor;
-              &+li::before {
+              & + li::before {
                 content: ' /';
                 color: $fontColor;
               }
@@ -297,7 +321,7 @@ main {
         }
       }
     }
-// リンク
+    // リンク
     &__link {
       @include secStand;
       &.on {
@@ -329,12 +353,12 @@ main {
                 height: 80px;
                 border-radius: 50%;
                 background: radial-gradient(#fff 20%, transparent 60%);
-                opacity: .8;
+                opacity: 0.8;
                 pointer-events: none;
               }
               &:hover::before {
                 scale: 1;
-                transition: .6s;
+                transition: 0.6s;
               }
             }
           }
@@ -344,19 +368,16 @@ main {
   }
 }
 
-
-
 // フッター
 footer {
   padding-top: 20px;
   p {
     text-align: center;
     small {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
 }
-
 
 // アニメーション
 @keyframes curtainSlide {
