@@ -1,0 +1,366 @@
+body {
+  font-family: Yu mincho;
+}
+// ヘッダー
+header {
+  width: 100%;
+  height: 160px;
+  background: #4c2619;
+  // ヘッダーの中身
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    // タイトル
+    &--title {
+      display: flex;
+    }
+    &--nav {
+      // ナビゲーションボタン
+      .btns {
+        ul {
+          display: flex;
+          list-style: none;
+          li {
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      // ナビゲーション
+      nav {
+        ul {
+          display: flex;
+          li {
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ファーストビュー
+.fv {
+  width: 100%;
+  height: 600px;
+  background: url('../img/fv.png') no-repeat center/cover;
+  position: relative;
+  margin-bottom: 32px;
+  &__text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    translate: -50%;
+    max-width: 1440px;
+    width: 100%;
+    .message {
+      text-align: right;
+      font-size: 65px;
+      font-weight: 600;
+      padding-right: 16px;
+    }
+  }
+  figure {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1440px;
+    width: 100%;
+  }
+}
+// 医院についてconcept
+.concept {
+  margin-bottom: 344px;
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 24px;
+    max-width: 1032px;
+    width: 100%;
+    p {
+      max-width: 928px;
+      width: 100%;
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 48px;
+    }
+  }
+  &__slider {
+    position: absolute;
+    display: flex;
+    gap: 32px;
+    &__box {
+      width: 600px;
+      height: 232px;
+      border-radius: 5px;
+      background-color: gray;
+      &:nth-child(odd) {
+        dl {
+          dd {
+            background: var(--blue-translucent-1, #a3e9ff80);
+          }
+        }
+      }
+      &:nth-of-type(even) {
+        dl {
+          dd {
+            background: var(--pink-translucent-1, #ffc1ea99);
+          }
+        }
+      }
+      dl {
+        width: 600px;
+        height: 232px;
+        position: relative;
+        border-radius: 5px;
+        dt {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        dd {
+          widows: 600px;
+          height: 88px;
+          padding: 8px 16px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          backdrop-filter: blur(3.5px);
+          border-radius: 0 0 5px 5px;
+        }
+      }
+      &.box01 {
+        background: url('../img/bg01.png') no-repeat center/cover;
+      }
+      &.box02 {
+        background: url('../img/bg02.png') no-repeat center/cover;
+      }
+      &.box03 {
+        background: url('../img/bg03.png') no-repeat center/cover;
+      }
+      &.box04 {
+        background: url('../img/bg04.png') no-repeat center/cover;
+      }
+    }
+  }
+}
+// section共通
+@mixin section($direction: row) {
+  margin: 0 auto 200px;
+  max-width: 1640px;
+  width: 100%;
+  display: flex;
+  flex-direction: $direction;
+}
+@mixin container($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  max-width: 1312px;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  figure {
+    z-index: -1;
+  }
+}
+@mixin title {
+  position: absolute;
+  top: 24px;
+  color: #4c2619;
+  opacity: 0.3;
+  font-size: 240px;
+}
+@mixin nav($direction: row-reverse) {
+  position: absolute;
+  bottom: 0;
+  list-style: none;
+  padding-bottom: 16px;
+  max-width: 75%;
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  li {
+    a {
+      display: flex;
+      flex-direction: $direction;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      background-color: #f0fbff;
+      text-decoration: none;
+      color: #4c2619;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+}
+// スタッフ
+.staff {
+  @include section;
+  &__container {
+    @include container;
+    background: linear-gradient(
+      -145deg,
+      transparent 50%,
+      rgba(76, 38, 25, 0.6)
+    );
+    &__text {
+      max-width: 712px;
+      width: 100%;
+      height: 600px;
+      position: relative;
+      right: 0;
+      &--title {
+        @include title;
+        right: 0;
+      }
+      &--nav {
+        @include nav;
+        grid-template-columns: 1fr;
+        li {
+          a {
+            padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+// 治療内容
+.treat {
+  @include section(row-reverse);
+  &__container {
+    @include container(row-reverse);
+    background: linear-gradient(145deg, transparent 50%, rgba(76, 38, 25, 0.6));
+    &__text {
+      max-width: 712px;
+      width: 100%;
+      height: 600px;
+      position: relative;
+      left: 0;
+      &--title {
+        @include title;
+        left: 0;
+      }
+      &--nav {
+        @include nav(row);
+        right: 0;
+        grid-template-columns: 1fr 1fr;
+        li {
+          a {
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+// 受診の流れ
+.flow {
+  @include section;
+  &__container {
+    @include container;
+    background: linear-gradient(
+      -145deg,
+      transparent 50%,
+      rgba(76, 38, 25, 0.6)
+    );
+    &__text {
+      max-width: 712px;
+      width: 100%;
+      height: 600px;
+      position: relative;
+      right: 0;
+      &--title {
+        @include title;
+        right: 0;
+      }
+      &--num {
+        position: absolute;
+        bottom: 88px;
+        list-style: none;
+        padding-left: 72px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        li {
+          height: 40px;
+          font-size: 24px;
+          color: black;
+          position: relative;
+          display: flex;
+          align-items: end;
+          &:nth-child(1) {
+            gap: 32px;
+            &::before {
+              content: '1.';
+              position: absolute;
+              font-size: 40px;
+              top: 8px;
+              left: -40px;
+            }
+          }
+          &:nth-child(2)::before {
+            content: '2.';
+            position: absolute;
+            font-size: 40px;
+            top: 8px;
+            left: -40px;
+          }
+          &:nth-child(3)::before {
+            content: '3.';
+            position: absolute;
+            font-size: 40px;
+            top: 8px;
+            left: -40px;
+          }
+          &:nth-child(4)::before {
+            content: '4.';
+            position: absolute;
+            font-size: 40px;
+            top: 8px;
+            left: -40px;
+          }
+        }
+      }
+      &--nav {
+        @include nav;
+        grid-template-columns: 1fr 1fr;
+        li {
+          &:first-child {
+            a {
+              background-color: #ffc1ea;
+            }
+          }
+          a {
+            padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+// アクセス
+.access {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto 120px;
+  display: flex;
+  &__text {
+    &--title {
+    }
+    &--body {
+      list-style: none;
+    }
+  }
+}
