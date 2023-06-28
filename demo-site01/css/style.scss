@@ -3,8 +3,25 @@ body {
 }
 // ヘッダー
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   background: #4c2619;
+  z-index: 5;
+  &.slide-out {
+    top: -160px;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+    &.fixed-on {
+      position: fixed;
+      &.slide-in {
+        opacity: 1;
+        translate: 0 160px;
+      }
+    }
+  }
   // ヘッダーの中身
   .container {
     max-width: 1440px;
@@ -112,6 +129,7 @@ header {
   height: 600px;
   background: url('../img/fv.png') no-repeat center/cover;
   position: relative;
+  margin-top: 160px;
   margin-bottom: 32px;
   &__text {
     position: absolute;

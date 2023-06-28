@@ -3,8 +3,25 @@ body {
 }
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   background: #4c2619;
+  z-index: 5;
+}
+header.slide-out {
+  top: -160px;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+header.slide-out.fixed-on {
+  position: fixed;
+}
+header.slide-out.fixed-on.slide-in {
+  opacity: 1;
+  translate: 0 160px;
 }
 header .container {
   max-width: 1440px;
@@ -95,6 +112,7 @@ header .container--nav nav ul li a {
   height: 600px;
   background: url("../img/fv.png") no-repeat center/cover;
   position: relative;
+  margin-top: 160px;
   margin-bottom: 32px;
 }
 .fv__text {
