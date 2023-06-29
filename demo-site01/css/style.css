@@ -107,6 +107,25 @@ header .container--nav nav ul li a {
   font-weight: 100;
 }
 
+#load {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 10;
+}
+#load.on {
+  display: block;
+  opacity: 1;
+}
+#load.on.off {
+  opacity: 0;
+  transition: 1.2s;
+}
+
 .fv {
   width: 100%;
   height: 600px;
@@ -122,6 +141,15 @@ header .container--nav nav ul li a {
   translate: -50%;
   max-width: 1440px;
   width: 100%;
+}
+.fv__text.out {
+  display: block;
+  opacity: 0;
+  z-index: 11;
+}
+.fv__text.out.fade-in {
+  opacity: 1;
+  transition: 1.3s;
 }
 .fv__text .message {
   text-align: right;
@@ -159,17 +187,15 @@ header .container--nav nav ul li a {
   line-height: 48px;
 }
 .concept__slider {
-  display: flex;
-  gap: 32px;
   width: 100%;
-  overflow-x: hidden;
-  padding: 0 32px;
+  overflow: hidden;
 }
 .concept__slider__box {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 232px;
+  margin: 0 16px;
   border-radius: 5px;
-  background-color: gray;
 }
 .concept__slider__box:nth-child(odd) dl dt {
   color: rgba(0, 194, 255, 0.6);
@@ -502,12 +528,16 @@ header .container--nav nav ul li a {
 }
 
 .ad__slider {
-  display: flex;
-  gap: 40px;
+  overflow: hidden;
+  width: 100%;
+  height: 128px;
+  margin-bottom: 112px;
+}
+.ad__slider figure {
+  max-width: 248px;
   width: 100%;
   height: 120px;
-  padding: 0 40px;
-  margin-bottom: 112px;
+  margin: 0 20px;
 }
 
 footer {

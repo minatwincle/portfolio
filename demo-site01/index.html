@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>竹浦デンタルクリニック</title>
   </head>
 
   <body id="top">
+    <div id="load"></div>
     <header id="head">
       <div class="container">
         <div class="container--title">
@@ -177,6 +188,24 @@
           <figure>
             <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
           </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
+          <figure>
+            <a href="banner.html"><img src="img/banner01.png" alt="" /></a>
+          </figure>
         </div>
       </div>
     </main>
@@ -185,6 +214,27 @@
       <p><small>© takeura clinic All Reserve.</small></p>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script>
+      $('.concept__slider, .ad__slider').slick({
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        speed: 15000,
+        slidesToShow: 1,
+        variableWidth: true, // スライド幅の自動計算を無効化
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        swipe: false,
+        swipeToSlide: false,
+        touchMove: false,
+      });
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
