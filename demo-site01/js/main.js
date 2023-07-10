@@ -100,3 +100,8 @@ navContainer.forEach((navItem) => {
     appear();
   });
 });
+window.addEventListener('scroll', function () {
+  disappear();
+  btns.classList.remove('appear');
+  navList.classList.remove('appear');
+});
