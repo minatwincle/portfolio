@@ -12,7 +12,6 @@ function disableScroll() {
 }
 const loadPhaze = document.getElementById('load');
 const message = document.getElementsByClassName('fv__text')[0];
-const wrapper = document.getElementsByClassName('wrapper')[0];
 window.addEventListener('load', () => {
   disableScroll();
   loadPhaze.classList.add('on');
@@ -65,5 +64,39 @@ links.forEach((link) => {
       top: target,
       behavior: 'smooth',
     });
+  });
+});
+
+// バーガーメニュー
+const burgerMenu = document.getElementsByClassName('burger')[0];
+const btns = document.getElementsByClassName('container--nav--btns')[0];
+const navList = document.getElementById('nav');
+const navContainer = [burgerMenu, btns, navList];
+function appear() {
+  btns.classList.add('on');
+  navList.classList.add('on');
+  setTimeout(function () {
+    btns.classList.toggle('appear');
+    navList.classList.toggle('appear');
+  }, 50);
+  navContainer.forEach((navItem) => {
+    navItem.setAttribute('style', 'pointer-events:none');
+    setTimeout(function () {
+      navItem.style.removeProperty('pointer-events');
+    }, 350);
+  });
+}
+function disappear() {
+  if (btns.classList.contains('on')) {
+    setTimeout(function () {
+      btns.classList.remove('on');
+      navList.classList.remove('on');
+    }, 300);
+  }
+}
+navContainer.forEach((navItem) => {
+  navItem.addEventListener('click', function () {
+    disappear();
+    appear();
   });
 });
