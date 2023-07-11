@@ -339,6 +339,9 @@ header {
       font-size: 21px;
       font-weight: 600;
       line-height: 48px;
+      @media screen and (max-width: 1044px) {
+        line-height: 24px;
+      }
     }
   }
   &__slider {
@@ -371,8 +374,9 @@ header {
         }
       }
       dl {
-        width: 600px;
-        height: 232px;
+        max-width: 600px;
+        width: 100%;
+        height: 100%;
         position: relative;
         border-radius: 5px;
         dt {
@@ -383,7 +387,8 @@ header {
           font-weight: 600;
         }
         dd {
-          widows: 600px;
+          max-width: 600px;
+          width: 100%;
           height: 88px;
           padding: 8px 16px;
           position: absolute;
@@ -395,6 +400,9 @@ header {
           line-height: 24px;
           color: #171717;
           font-weight: 600;
+          @media screen and (max-width: 768px) {
+            height: 104px;
+          }
         }
       }
       &.box01 {
@@ -409,6 +417,10 @@ header {
       &.box04 {
         background: url('../img/bg04.png') no-repeat center/cover;
       }
+      @media screen and (max-width: 768px) {
+        max-width: 400px;
+        height: 248px;
+      }
     }
   }
 }
@@ -419,6 +431,9 @@ header {
   width: 100%;
   display: flex;
   flex-direction: $direction;
+  @media screen and (max-width: 1044px) {
+    flex-direction: row;
+  }
 }
 @mixin container($direction: row) {
   display: flex;
@@ -429,7 +444,16 @@ header {
   position: relative;
   figure {
     z-index: -1;
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
   }
+}
+@mixin text {
+  max-width: 712px;
+  min-width: 300px;
+  width: 100%;
+  position: relative;
 }
 @mixin title {
   position: absolute;
@@ -437,6 +461,9 @@ header {
   color: #4c2619;
   opacity: 0.3;
   font-size: 240px;
+  @media screen and (max-width: 1044px) {
+    font-size: 120px;
+  }
 }
 @mixin nav($direction: row-reverse) {
   position: absolute;
@@ -477,10 +504,7 @@ header {
       rgba(76, 38, 25, 0.6)
     );
     &__text {
-      max-width: 712px;
-      width: 100%;
-      height: 600px;
-      position: relative;
+      @include text;
       right: 0;
       &--title {
         @include title;
@@ -505,10 +529,7 @@ header {
     @include container(row-reverse);
     background: linear-gradient(145deg, transparent 50%, rgba(76, 38, 25, 0.6));
     &__text {
-      max-width: 712px;
-      width: 100%;
-      height: 600px;
-      position: relative;
+      @include text;
       left: 0;
       &--title {
         @include title;
@@ -538,10 +559,7 @@ header {
       rgba(76, 38, 25, 0.6)
     );
     &__text {
-      max-width: 712px;
-      width: 100%;
-      height: 600px;
-      position: relative;
+      @include text;
       right: 0;
       &--title {
         @include title;
@@ -605,6 +623,9 @@ header {
               transition: 0.2s;
               &:hover {
                 background-color: #f0fbff;
+              }
+              @media screen and (max-width: 1256px) {
+                font-size: 12px;
               }
             }
           }

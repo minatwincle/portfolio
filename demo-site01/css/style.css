@@ -319,6 +319,11 @@ header .container--nav .burger {
   font-weight: 600;
   line-height: 48px;
 }
+@media screen and (max-width: 1044px) {
+  .concept__text p {
+    line-height: 24px;
+  }
+}
 .concept__slider {
   width: 100%;
   overflow: hidden;
@@ -343,8 +348,9 @@ header .container--nav .burger {
   background: var(--pink-translucent-1, rgba(255, 193, 234, 0.6));
 }
 .concept__slider__box dl {
-  width: 600px;
-  height: 232px;
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
   position: relative;
   border-radius: 5px;
 }
@@ -356,7 +362,8 @@ header .container--nav .burger {
   font-weight: 600;
 }
 .concept__slider__box dl dd {
-  widows: 600px;
+  max-width: 600px;
+  width: 100%;
   height: 88px;
   padding: 8px 16px;
   position: absolute;
@@ -370,6 +377,11 @@ header .container--nav .burger {
   color: #171717;
   font-weight: 600;
 }
+@media screen and (max-width: 768px) {
+  .concept__slider__box dl dd {
+    height: 104px;
+  }
+}
 .concept__slider__box.box01 {
   background: url("../img/bg01.png") no-repeat center/cover;
 }
@@ -382,6 +394,12 @@ header .container--nav .burger {
 .concept__slider__box.box04 {
   background: url("../img/bg04.png") no-repeat center/cover;
 }
+@media screen and (max-width: 768px) {
+  .concept__slider__box {
+    max-width: 400px;
+    height: 248px;
+  }
+}
 
 .staff {
   margin: 0 auto 200px;
@@ -389,6 +407,11 @@ header .container--nav .burger {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+@media screen and (max-width: 1044px) {
+  .staff {
+    flex-direction: row;
+  }
 }
 .staff__container {
   display: flex;
@@ -401,11 +424,14 @@ header .container--nav .burger {
 }
 .staff__container figure {
   z-index: -1;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
 }
 .staff__container__text {
   max-width: 712px;
+  min-width: 300px;
   width: 100%;
-  height: 600px;
   position: relative;
   right: 0;
 }
@@ -416,6 +442,11 @@ header .container--nav .burger {
   opacity: 0.3;
   font-size: 240px;
   right: 0;
+}
+@media screen and (max-width: 1044px) {
+  .staff__container__text--title {
+    font-size: 120px;
+  }
 }
 .staff__container__text--nav {
   position: absolute;
@@ -455,6 +486,11 @@ header .container--nav .burger {
   display: flex;
   flex-direction: row-reverse;
 }
+@media screen and (max-width: 1044px) {
+  .treat {
+    flex-direction: row;
+  }
+}
 .treat__container {
   display: flex;
   flex-direction: row-reverse;
@@ -466,11 +502,14 @@ header .container--nav .burger {
 }
 .treat__container figure {
   z-index: -1;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
 }
 .treat__container__text {
   max-width: 712px;
+  min-width: 300px;
   width: 100%;
-  height: 600px;
   position: relative;
   left: 0;
 }
@@ -481,6 +520,11 @@ header .container--nav .burger {
   opacity: 0.3;
   font-size: 240px;
   left: 0;
+}
+@media screen and (max-width: 1044px) {
+  .treat__container__text--title {
+    font-size: 120px;
+  }
 }
 .treat__container__text--nav {
   position: absolute;
@@ -521,6 +565,11 @@ header .container--nav .burger {
   display: flex;
   flex-direction: row;
 }
+@media screen and (max-width: 1044px) {
+  .flow {
+    flex-direction: row;
+  }
+}
 .flow__container {
   display: flex;
   flex-direction: row;
@@ -532,11 +581,14 @@ header .container--nav .burger {
 }
 .flow__container figure {
   z-index: -1;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
 }
 .flow__container__text {
   max-width: 712px;
+  min-width: 300px;
   width: 100%;
-  height: 600px;
   position: relative;
   right: 0;
 }
@@ -547,6 +599,11 @@ header .container--nav .burger {
   opacity: 0.3;
   font-size: 240px;
   right: 0;
+}
+@media screen and (max-width: 1044px) {
+  .flow__container__text--title {
+    font-size: 120px;
+  }
 }
 .flow__container__text--num {
   position: absolute;
@@ -629,6 +686,11 @@ header .container--nav .burger {
 }
 .flow__container__text--nav li:first-child a:hover {
   background-color: #f0fbff;
+}
+@media screen and (max-width: 1256px) {
+  .flow__container__text--nav li:first-child a {
+    font-size: 12px;
+  }
 }
 .flow__container__text--nav li a {
   padding-right: 8px;
