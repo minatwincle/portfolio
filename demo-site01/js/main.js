@@ -78,12 +78,12 @@ function appear() {
   setTimeout(function () {
     btns.classList.toggle('appear');
     navList.classList.toggle('appear');
-  }, 50);
+  }, 1);
   navContainer.forEach((navItem) => {
     navItem.setAttribute('style', 'pointer-events:none');
     setTimeout(function () {
       navItem.style.removeProperty('pointer-events');
-    }, 350);
+    }, 300);
   });
 }
 function disappear() {
