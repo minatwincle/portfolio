@@ -101,7 +101,15 @@ navContainer.forEach((navItem) => {
   });
 });
 window.addEventListener('scroll', function () {
-  disappear();
-  btns.classList.remove('appear');
-  navList.classList.remove('appear');
+  navContainer.forEach((navItem) => {
+    if (btns.classList.contains('on')) {
+      navItem.setAttribute('style', 'pointer-events:none');
+    }
+    setTimeout(function () {
+      btns.classList.remove('appear');
+      navList.classList.remove('appear');
+      disappear();
+      navItem.style.removeProperty('pointer-events');
+    }, 300);
+  });
 });
