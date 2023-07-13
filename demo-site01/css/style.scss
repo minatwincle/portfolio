@@ -43,11 +43,17 @@ header {
           line-height: 40px;
           font-weight: 400;
           color: #fff;
+          @media screen and (max-width: 520px) {
+            font-size: 20px;
+          }
         }
         p {
           font-size: 16px;
           color: #fff;
           text-align: right;
+          @media screen and (max-width: 520px) {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -186,7 +192,7 @@ header {
           display: block;
           position: absolute;
           top: 50%;
-          right: 40px;
+          right: 4%;
           translate: 0 -50%;
           width: 100px;
           height: 70px;
@@ -257,6 +263,24 @@ header {
           }
         }
       }
+      @media screen and (max-width: 520px) {
+        .burger {
+          top: auto;
+          bottom: -8px;
+          width: 56px;
+          height: 48px;
+          span:nth-of-type(1) {
+            left: 16px;
+            width: 24px;
+            height: 15px;
+          }
+          span:nth-of-type(2) {
+            width: 56px;
+            height: 16px;
+            font-size: 16px;
+          }
+        }
+      }
     }
   }
 }
@@ -289,6 +313,9 @@ header {
   position: relative;
   margin-top: 160px;
   margin-bottom: 32px;
+  @media screen and (max-width: 768px) {
+    height: 400px;
+  }
   &__text {
     position: absolute;
     top: 40%;
@@ -310,6 +337,14 @@ header {
       font-size: 65px;
       font-weight: 600;
       padding-right: 16px;
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+      }
+      @media screen and (max-width: 520px) {
+        width: 296px;
+        position: absolute;
+        right: 0;
+      }
     }
   }
   figure {
@@ -321,6 +356,11 @@ header {
     flex-direction: row-reverse;
     max-width: 1440px;
     width: 100%;
+    @media screen and (max-width: 768px) {
+      img {
+        width: 368px;
+      }
+    }
   }
 }
 // 医院についてconcept
@@ -341,6 +381,10 @@ header {
       line-height: 48px;
       @media screen and (max-width: 1044px) {
         line-height: 24px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+        font-weight: 300;
       }
     }
   }
@@ -445,8 +489,14 @@ header {
   figure {
     z-index: -1;
     max-width: 600px;
+    height: 600px;
     width: 100%;
     overflow: hidden;
+    @media screen and (max-width: 768px) {
+      img {
+        display: none;
+      }
+    }
   }
 }
 @mixin text {
@@ -462,7 +512,7 @@ header {
   opacity: 0.3;
   font-size: 240px;
   @media screen and (max-width: 1044px) {
-    font-size: 120px;
+    font-size: 104px;
   }
 }
 @mixin nav($direction: row-reverse) {
@@ -489,6 +539,9 @@ header {
       transition: 0.2s;
       &:hover {
         background-color: #ffc1ea;
+      }
+      @media screen and (max-width: 880px) {
+        font-size: 18px;
       }
     }
   }
@@ -520,6 +573,11 @@ header {
         }
       }
     }
+    @media screen and (max-width: 768px) {
+      figure {
+        background: url('../img/img-staff.png') no-repeat center / cover;
+      }
+    }
   }
 }
 // 治療内容
@@ -544,6 +602,14 @@ header {
             padding-left: 8px;
           }
         }
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      figure {
+        background: url('../img/img-treat.png') no-repeat center / cover;
       }
     }
   }
@@ -589,6 +655,9 @@ header {
               top: 8px;
               left: -40px;
             }
+            @media screen and (max-width: 1044px) {
+              display: block;
+            }
           }
           &:nth-child(2)::before {
             content: '2.';
@@ -617,6 +686,12 @@ header {
         @include nav;
         grid-template-columns: 1fr 1fr;
         li {
+          a {
+            @media screen and (max-width: 1256px) {
+              font-size: 12px;
+              white-space: nowrap;
+            }
+          }
           &:first-child {
             a {
               background-color: #ffc1ea;
@@ -624,15 +699,17 @@ header {
               &:hover {
                 background-color: #f0fbff;
               }
-              @media screen and (max-width: 1256px) {
-                font-size: 12px;
-              }
             }
           }
           a {
             padding-right: 8px;
           }
         }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      figure {
+        background: url('../img/img-flow.png') no-repeat left / cover;
       }
     }
   }
@@ -678,6 +755,15 @@ header {
         font-size: 18px;
         line-height: 24px;
         font-weight: 600;
+      }
+    }
+  }
+  @media screen and (max-width: 1044px) {
+    display: block;
+    .map {
+      margin: 0 auto;
+      figure {
+        position: relative;
       }
     }
   }

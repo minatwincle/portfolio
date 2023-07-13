@@ -44,10 +44,20 @@ header .container--title--text h2 {
   font-weight: 400;
   color: #fff;
 }
+@media screen and (max-width: 520px) {
+  header .container--title--text h2 {
+    font-size: 20px;
+  }
+}
 header .container--title--text p {
   font-size: 16px;
   color: #fff;
   text-align: right;
+}
+@media screen and (max-width: 520px) {
+  header .container--title--text p {
+    font-size: 12px;
+  }
 }
 header .container--nav {
   height: 160px;
@@ -168,7 +178,7 @@ header .container--nav .burger {
     display: block;
     position: absolute;
     top: 50%;
-    right: 40px;
+    right: 4%;
     translate: 0 -50%;
     width: 100px;
     height: 70px;
@@ -239,6 +249,24 @@ header .container--nav .burger {
     font-weight: bold;
   }
 }
+@media screen and (max-width: 520px) {
+  header .container--nav .burger {
+    top: auto;
+    bottom: -8px;
+    width: 56px;
+    height: 48px;
+  }
+  header .container--nav .burger span:nth-of-type(1) {
+    left: 16px;
+    width: 24px;
+    height: 15px;
+  }
+  header .container--nav .burger span:nth-of-type(2) {
+    width: 56px;
+    height: 16px;
+    font-size: 16px;
+  }
+}
 
 #load {
   display: block;
@@ -267,6 +295,11 @@ header .container--nav .burger {
   margin-top: 160px;
   margin-bottom: 32px;
 }
+@media screen and (max-width: 768px) {
+  .fv {
+    height: 400px;
+  }
+}
 .fv__text {
   position: absolute;
   top: 40%;
@@ -290,6 +323,18 @@ header .container--nav .burger {
   font-weight: 600;
   padding-right: 16px;
 }
+@media screen and (max-width: 768px) {
+  .fv__text .message {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .fv__text .message {
+    width: 296px;
+    position: absolute;
+    right: 0;
+  }
+}
 .fv figure {
   position: absolute;
   bottom: 0;
@@ -299,6 +344,11 @@ header .container--nav .burger {
   flex-direction: row-reverse;
   max-width: 1440px;
   width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .fv figure img {
+    width: 368px;
+  }
 }
 
 .concept {
@@ -322,6 +372,12 @@ header .container--nav .burger {
 @media screen and (max-width: 1044px) {
   .concept__text p {
     line-height: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .concept__text p {
+    font-size: 18px;
+    font-weight: 300;
   }
 }
 .concept__slider {
@@ -425,8 +481,14 @@ header .container--nav .burger {
 .staff__container figure {
   z-index: -1;
   max-width: 600px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .staff__container figure img {
+    display: none;
+  }
 }
 .staff__container__text {
   max-width: 712px;
@@ -445,7 +507,7 @@ header .container--nav .burger {
 }
 @media screen and (max-width: 1044px) {
   .staff__container__text--title {
-    font-size: 120px;
+    font-size: 104px;
   }
 }
 .staff__container__text--nav {
@@ -475,8 +537,18 @@ header .container--nav .burger {
 .staff__container__text--nav li a:hover {
   background-color: #ffc1ea;
 }
+@media screen and (max-width: 880px) {
+  .staff__container__text--nav li a {
+    font-size: 18px;
+  }
+}
 .staff__container__text--nav li a {
   padding-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  .staff__container figure {
+    background: url("../img/img-staff.png") no-repeat center/cover;
+  }
 }
 
 .treat {
@@ -503,8 +575,14 @@ header .container--nav .burger {
 .treat__container figure {
   z-index: -1;
   max-width: 600px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .treat__container figure img {
+    display: none;
+  }
 }
 .treat__container__text {
   max-width: 712px;
@@ -523,7 +601,7 @@ header .container--nav .burger {
 }
 @media screen and (max-width: 1044px) {
   .treat__container__text--title {
-    font-size: 120px;
+    font-size: 104px;
   }
 }
 .treat__container__text--nav {
@@ -554,8 +632,23 @@ header .container--nav .burger {
 .treat__container__text--nav li a:hover {
   background-color: #ffc1ea;
 }
+@media screen and (max-width: 880px) {
+  .treat__container__text--nav li a {
+    font-size: 18px;
+  }
+}
 .treat__container__text--nav li a {
   padding-left: 8px;
+}
+@media screen and (max-width: 768px) {
+  .treat__container__text--nav {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .treat__container figure {
+    background: url("../img/img-treat.png") no-repeat center/cover;
+  }
 }
 
 .flow {
@@ -582,8 +675,14 @@ header .container--nav .burger {
 .flow__container figure {
   z-index: -1;
   max-width: 600px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .flow__container figure img {
+    display: none;
+  }
 }
 .flow__container__text {
   max-width: 712px;
@@ -602,7 +701,7 @@ header .container--nav .burger {
 }
 @media screen and (max-width: 1044px) {
   .flow__container__text--title {
-    font-size: 120px;
+    font-size: 104px;
   }
 }
 .flow__container__text--num {
@@ -631,6 +730,11 @@ header .container--nav .burger {
   font-size: 40px;
   top: 8px;
   left: -40px;
+}
+@media screen and (max-width: 1044px) {
+  .flow__container__text--num li:nth-child(1) {
+    display: block;
+  }
 }
 .flow__container__text--num li:nth-child(2)::before {
   content: "2.";
@@ -680,6 +784,17 @@ header .container--nav .burger {
 .flow__container__text--nav li a:hover {
   background-color: #ffc1ea;
 }
+@media screen and (max-width: 880px) {
+  .flow__container__text--nav li a {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1256px) {
+  .flow__container__text--nav li a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
 .flow__container__text--nav li:first-child a {
   background-color: #ffc1ea;
   transition: 0.2s;
@@ -687,13 +802,13 @@ header .container--nav .burger {
 .flow__container__text--nav li:first-child a:hover {
   background-color: #f0fbff;
 }
-@media screen and (max-width: 1256px) {
-  .flow__container__text--nav li:first-child a {
-    font-size: 12px;
-  }
-}
 .flow__container__text--nav li a {
   padding-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  .flow__container figure {
+    background: url("../img/img-flow.png") no-repeat left/cover;
+  }
 }
 
 .access {
@@ -737,6 +852,17 @@ header .container--nav .burger {
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
+}
+@media screen and (max-width: 1044px) {
+  .access {
+    display: block;
+  }
+  .access .map {
+    margin: 0 auto;
+  }
+  .access .map figure {
+    position: relative;
+  }
 }
 
 .ad__slider {
