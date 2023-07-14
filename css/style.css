@@ -13,6 +13,12 @@ header {
   display: flex;
   justify-content: space-between;
   position: relative;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  header {
+    display: block;
+  }
 }
 header .header__title {
   padding: 10px 30px 10px 50px;
@@ -30,6 +36,11 @@ header .header__title__sub {
 }
 header .header__nav {
   padding: 30px 25px 0 0;
+}
+@media screen and (max-width: 768px) {
+  header .header__nav {
+    padding: 0;
+  }
 }
 header .header__nav__list {
   display: flex;
@@ -58,13 +69,12 @@ header .header__nav__list__link a:hover {
 }
 
 main .main__container {
-  max-width: 800px;
   width: 100%;
   max-height: 750px;
   background: url(../img/main-container-bg.jpg);
   border-right: 3px #414141 solid;
   border-bottom: 3px #414141 solid;
-  box-sizing: content-box;
+  box-sizing: border-box;
   margin: 15px auto 0;
   position: relative;
   overflow-x: hidden;
@@ -74,6 +84,11 @@ main .main__container {
 }
 main .main__container::-webkit-scrollbar {
   display: none;
+}
+@media screen and (max-width: 768px) {
+  main .main__container {
+    border: none;
+  }
 }
 main .main__container__curtain {
   display: flex;
@@ -141,6 +156,7 @@ main .main__container__intro {
   position: absolute;
   top: 0;
   width: 100%;
+  padding: 0 20px;
 }
 main .main__container__intro.on {
   display: block;
@@ -181,12 +197,14 @@ main .main__container__intro__box__contents dl dt:nth-of-type(2) {
 main .main__container__intro__box__contents dl dd {
   margin-top: 15px;
   font-size: 1.1rem;
+  line-height: 1.3rem;
 }
 main .main__container__work {
   display: none;
   position: absolute;
   top: 0;
   width: 100%;
+  padding: 0 20px;
 }
 main .main__container__work.on {
   display: block;
@@ -208,13 +226,22 @@ main .main__container__work__box__contents {
 main .main__container__work__box__contents .work-file {
   display: flex;
   gap: 15px;
-  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  main .main__container__work__box__contents .work-file {
+    flex-direction: column;
+  }
 }
 main .main__container__work__box__contents .work-file-text {
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  main .main__container__work__box__contents .work-file-text {
+    height: auto;
+  }
 }
 main .main__container__work__box__contents .work-file-text h3 {
   font-size: 1.5rem;
@@ -230,6 +257,7 @@ main .main__container__skill {
   position: absolute;
   top: 0;
   width: 100%;
+  padding: 0 20px;
 }
 main .main__container__skill.on {
   display: block;
@@ -274,6 +302,7 @@ main .main__container__link {
   position: absolute;
   top: 0;
   width: 100%;
+  padding: 0 20px;
 }
 main .main__container__link.on {
   display: block;

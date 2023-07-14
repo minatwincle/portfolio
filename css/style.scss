@@ -12,6 +12,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  padding: 0 20px;
 }
 @mixin secOn {
   display: block;
@@ -43,6 +44,10 @@ header {
   display: flex;
   justify-content: space-between;
   position: relative;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
   // タイトル
   .header__title {
     padding: 10px 30px 10px 50px;
@@ -61,6 +66,9 @@ header {
   // ナビゲーション
   .header__nav {
     padding: 30px 25px 0 0;
+    @media screen and (max-width: 768px) {
+      padding: 0;
+    }
     &__list {
       display: flex;
       justify-content: space-between;
@@ -94,13 +102,12 @@ header {
 // メイン
 main {
   .main__container {
-    max-width: 800px;
     width: 100%;
     max-height: 750px;
     background: url(../img/main-container-bg.jpg);
     border-right: 3px $fontColor solid;
     border-bottom: 3px $fontColor solid;
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 15px auto 0;
     position: relative;
     overflow-x: hidden;
@@ -109,6 +116,9 @@ main {
     scrollbar-width: none;
     &::-webkit-scrollbar {
       display: none;
+    }
+    @media screen and (max-width: 768px) {
+      border: none;
     }
     // スライドカーテン
     &__curtain {
@@ -239,6 +249,7 @@ main {
             dd {
               margin-top: 15px;
               font-size: 1.1rem;
+              line-height: 1.3rem;
             }
           }
         }
@@ -262,12 +273,17 @@ main {
           .work-file {
             display: flex;
             gap: 15px;
-            padding: 0 20px;
+            @media screen and (max-width: 768px) {
+              flex-direction: column;
+            }
             &-text {
               height: 200px;
               display: flex;
               flex-direction: column;
               justify-content: center;
+              @media screen and (max-width: 768px) {
+                height: auto;
+              }
               h3 {
                 font-size: 1.5rem;
                 color: $fontColor;
