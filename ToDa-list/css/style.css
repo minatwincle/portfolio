@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  font-family: "メイリオ";
+  font-family: "メイリオ", serif;
   min-height: 100vh;
   background: #dde000;
   overflow-x: hidden;
