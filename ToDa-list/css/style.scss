@@ -77,19 +77,14 @@ main {
             top: -2px;
             left: -2px;
             &::before {
+              content: '';
+              display: block;
               position: absolute;
-              content: '▲ ▼';
-              color: $fontColor2;
-              font-size: 3.7rem;
-              line-height: 3rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              background-color: $fontColor1;
               border: 2px solid $fontColor2;
               border-radius: 8px 0 0 8px;
               width: 60px;
               height: 100px;
+              background: url('../img/arrow1.svg') no-repeat center / cover;
               transition: 0.25s ease-in-out;
             }
             &::after {
@@ -103,8 +98,8 @@ main {
             }
             &:checked {
               &::before {
-                color: $fontColor3;
                 border: 2px solid $fontColor3;
+                background: url('../img/arrow2.svg') no-repeat center / cover;
               }
               &::after {
                 translate: 0 48px;

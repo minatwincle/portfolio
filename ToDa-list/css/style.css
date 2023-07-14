@@ -70,19 +70,14 @@ main .form-area form p input#important {
   left: -2px;
 }
 main .form-area form p input#important::before {
+  content: "";
+  display: block;
   position: absolute;
-  content: "▲ ▼";
-  color: #26e400;
-  font-size: 3.7rem;
-  line-height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
   border: 2px solid #26e400;
   border-radius: 8px 0 0 8px;
   width: 60px;
   height: 100px;
+  background: url("../img/arrow1.svg") no-repeat center/cover;
   transition: 0.25s ease-in-out;
 }
 main .form-area form p input#important::after {
@@ -95,8 +90,8 @@ main .form-area form p input#important::after {
   transition: 0.25s ease-in-out;
 }
 main .form-area form p input#important:checked::before {
-  color: #ff3191;
   border: 2px solid #ff3191;
+  background: url("../img/arrow2.svg") no-repeat center/cover;
 }
 main .form-area form p input#important:checked::after {
   translate: 0 48px;
